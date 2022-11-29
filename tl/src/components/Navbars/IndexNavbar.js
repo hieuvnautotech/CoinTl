@@ -21,6 +21,7 @@ function IndexNavbar() {
   const [navbarColor, setNavbarColor] = React.useState("navbar-transparent");
   const [collapseOpen, setCollapseOpen] = React.useState(false);
   React.useEffect(() => {
+    setNavbarColor("navbar-transparent");
     const updateNavbarColor = () => {
       if (
         document.documentElement.scrollTop > 399 ||
