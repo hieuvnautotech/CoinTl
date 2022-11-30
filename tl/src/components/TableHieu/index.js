@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
 import { Button, Table, UncontrolledTooltip } from "reactstrap";
 import { Pagination, PaginationItem, PaginationLink } from "reactstrap";
-
-export default function TableHieu({news}) {
+// import "assets/navBarHieu/navHieuCss.css";
+export default function TableHieu({ news }) {
   return (
     <>
-        <Table>
+      <Table>
         <thead>
           <tr>
             <th>ID</th>
@@ -35,28 +35,24 @@ export default function TableHieu({news}) {
               </Button>
             </td>
           </tr> */}
-            {
-                news.map(article=>
-                   <tr key={article.NewsId}>
-                        <td>{article.NewsId}</td>
-                        <td>{article.Article}</td>
-                        <td>{article.PhotoFileName}</td>
-                        <td>{article.SourceUrl}</td>
-                        <td>{article.Postman}</td>
-                        <td>{article.PostDate}</td>
-                        <td>
-              <Button color="success" type="button">
-                <i className="now-ui-icons ui-2_settings-90"></i>
-              </Button>
-              <Button color="danger" type="button">
-                <i className="now-ui-icons ui-1_simple-remove"></i>
-              </Button>
-            </td>
-                   </tr> 
-                )
-            }
-          
-          
+          {news.map((article) => (
+            <tr key={article.NewsId}>
+              <td>{article.NewsId}</td>
+              <td>{article.Article}</td>
+              <td>{article.PhotoFileName}</td>
+              <td>{article.SourceUrl}</td>
+              <td>{article.Postman}</td>
+              <td>{article.PostDate}</td>
+              <td>
+                <Button color="success" type="button">
+                  <i className="now-ui-icons ui-2_settings-90"></i>
+                </Button>
+                <Button color="danger" type="button">
+                  <i className="now-ui-icons ui-1_simple-remove"></i>
+                </Button>
+              </td>
+            </tr>
+          ))}
         </tbody>
       </Table>
       <nav aria-label="Page navigation example">
@@ -96,5 +92,5 @@ export default function TableHieu({news}) {
         </Pagination>
       </nav>
     </>
-  )
+  );
 }

@@ -5,6 +5,7 @@ import Navhieu from "../../components/Navbars/NavHieu"
 import TableHieu from "../../components/TableHieu/index"
 import {getNews} from "../../components/apis/index"
 import { useEffect, useState } from "react";
+import ModalHieu from "../../components/ModalHieu/index"
 
 
 
@@ -25,7 +26,10 @@ export default function AdminPage() {
   return (
     <>
       <Navhieu></Navhieu>
-      <Button color="info">Add News</Button>
+      
+      <ModalHieu>
+        
+      </ModalHieu>
       <TableHieu news={news}></TableHieu>
    
     </>
