@@ -1,6 +1,6 @@
 import React from "react";
 // reactstrap components
-import { Form, FormGroup, Input } from "reactstrap";
+import { Alert, Form, FormGroup, Input } from "reactstrap";
 import { useState, useEffect } from "react";
 import {
   Button,
@@ -16,37 +16,48 @@ import axios from "axios";
 // core components
 
 function ModalHieu() {
-    const url = "http://localhost:59755/api/News";
+  const url = "http://localhost:59755/api/News";
+  const urlSaveFile = "http://localhost:59755/api/News/SaveFile";
   const [modalTooltips, setModalTooltips] = React.useState(false);
   const [dataNews, setDataNews] = useState({
     article: "",
     sourceUrl: "",
   });
+  const [images, setImages] = useState();
 
-    
-    
   const onFileChange = (event) => {
+    setImages(event.target.files[0]);
     console.log(event.target.files[0]);
-    };
-    
+  };
 
-    const handle = (e) => {
-        const newDataNews = {...dataNews}
-        newDataNews[e.target.id] = e.target.value
-        setDataNews(newDataNews)
-        console.log("newDataNews", newDataNews);
-    }
+  const handle = (e) => {
+    const newDataNews = { ...dataNews };
+    newDataNews[e.target.id] = e.target.value;
+    setDataNews(newDataNews);
+    console.log("newDataNews", newDataNews);
+  };
 
-    const Submit = (e) => { 
-        e.preventDefault();
-        axios.post(url, {
-          article: dataNews.article,
-          sourceUrl: dataNews.sourceUrl,
-        }).then(res => { 
-            console.log(res.data);
-            setModalTooltips(false)
-        });
-    }
+  const config = {
+    headers: { "content-type": "multipart/form-data" },
+  };
+  const Submit = (e) => {
+    e.preventDefault();
+    axios
+      .post(url, {
+        article: dataNews.article,
+        sourceUrl: dataNews.sourceUrl,
+      })
+      .then((res) => {
+        if (res.data == "Added Successfully!!") {
+          var bodyFormData = new FormData();
+          bodyFormData.append("image", images);
+          axios
+            .post(urlSaveFile, bodyFormData, config)
+            .then((res) => Alert("Success!"));
+        }
+        setModalTooltips(false);
+      });
+  };
   return (
     <>
       <Button color="info" type="button" onClick={() => setModalTooltips(true)}>
@@ -110,11 +121,7 @@ function ModalHieu() {
           >
             Close
           </Button>
-          <Button
-            color="primary"
-            type="button"
-            onClick={(e) =>Submit(e)}
-          >
+          <Button color="primary" type="button" onClick={(e) => Submit(e)}>
             Save
           </Button>
         </div>

@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Button, Table, UncontrolledTooltip } from "reactstrap";
 import { Pagination, PaginationItem, PaginationLink } from "reactstrap";
 // import "assets/navBarHieu/navHieuCss.css";
+import logo from "../../assets/img/bg1.jpg";
 export default function TableHieu({ news }) {
+  var url = "http://localhost:59755/Photos/";
+  useEffect(() => {
+    console.log(news);
+  }, [news]);
   return (
     <>
       <Table>
@@ -39,7 +44,9 @@ export default function TableHieu({ news }) {
             <tr key={article.NewsId}>
               <td>{article.NewsId}</td>
               <td>{article.Article}</td>
-              <td>{article.PhotoFileName}</td>
+              <td>
+                <img src={url + `${ article.PhotoFileName }`} />
+              </td>
               <td>{article.SourceUrl}</td>
               <td>{article.Postman}</td>
               <td>{article.PostDate}</td>
