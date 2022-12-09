@@ -32,6 +32,10 @@ import LoginPage from "views/examples/LoginPage.js";
 import LandingPage from "views/examples/LandingPage.js";
 import ProfilePage from "views/examples/ProfilePage.js";
 import AdminPage from "views/examples/AdminPage"
+import Admin2Page from "views/examples/Admin2Page"
+
+import "./assets/admin2/admin2.css";
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -41,6 +45,7 @@ root.render(
       <Switch>
         <Route path="/index" render={(props) => <Index {...props} />} />
         <Route path="/admin" render={(props) => <AdminPage {...props} />} />
+        <Route path="/admin2" render={(props) => <Admin2Page {...props} />} />
         <Route
           path="/nucleo-icons"
           render={(props) => <NucleoIcons {...props} />}
