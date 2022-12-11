@@ -33,6 +33,7 @@ import LandingPage from "views/examples/LandingPage.js";
 import ProfilePage from "views/examples/ProfilePage.js";
 import AdminPage from "views/examples/AdminPage"
 import Admin2Page from "views/examples/Admin2Page"
+import Admin3Page from "views/examples/Admin3Page"
 
 import "./assets/admin2/admin2.css";
 
@@ -46,6 +47,7 @@ root.render(
         <Route path="/index" render={(props) => <Index {...props} />} />
         <Route path="/admin" render={(props) => <AdminPage {...props} />} />
         <Route path="/admin2" render={(props) => <Admin2Page {...props} />} />
+        <Route path="/admin3" render={(props) => <Admin3Page {...props} />} />
         <Route
           path="/nucleo-icons"
           render={(props) => <NucleoIcons {...props} />}
