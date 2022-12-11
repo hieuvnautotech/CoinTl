@@ -6,7 +6,7 @@ import TableHieu from "../../components/TableHieu/index"
 import {getNews} from "../../components/apis/index"
 import { useEffect, useState } from "react";
 import ModalHieu from "../../components/ModalHieu/index"
-
+import CardHieu from "../../components/CardHieu/CardHieu.js"
 
 
 export default function AdminPage() {
@@ -30,7 +30,7 @@ export default function AdminPage() {
       <ModalHieu>
         
       </ModalHieu>
-      <TableHieu news={news}></TableHieu>
+      <CardHieu/>
    
     </>
   );
