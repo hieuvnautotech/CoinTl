@@ -41,7 +41,7 @@ function Navhieu(){
             <Nav navbar>
               <NavItem className="active">
                 <NavLink size="lg" className="txtHome" href="#pablo" onClick={e => e.preventDefault()}>
-                  Home <span className="sr-only">(current)</span>
+                  Admin <span className="sr-only">(current)</span>
                 </NavLink>
               </NavItem>
               <NavItem>
