@@ -12,44 +12,44 @@ function DarkFooter() {
           <ul>
             <li>
               <a
-                href="https://www.creative-tim.com?ref=nukr-dark-footer"
-                target="_blank"
+                // href="https://www.creative-tim.com?ref=nukr-dark-footer"
+                // target="_blank"
               >
-                Creative Tim
+                Hiếu & Đạt CORP
               </a>
             </li>
             <li>
-              <a
+              {/* <a
                 href="http://presentation.creative-tim.com?ref=nukr-dark-footer"
                 target="_blank"
               >
                 About Us
-              </a>
+              </a> */}
             </li>
             <li>
-              <a
+              {/* <a
                 href="http://blog.creative-tim.com?ref=nukr-dark-footer"
                 target="_blank"
               >
                 Blog
-              </a>
+              </a> */}
             </li>
           </ul>
         </nav>
         <div className="copyright" id="copyright">
           © {new Date().getFullYear()}, Designed by{" "}
           <a
-            href="https://www.invisionapp.com?ref=nukr-dark-footer"
-            target="_blank"
+          // href="https://www.invisionapp.com?ref=nukr-dark-footer"
+          // target="_blank"
           >
-            Invision
+            Hiếu & Đạt
           </a>
-          . Coded by{" "}
+          {/* . Coded by{" "} */}
           <a
-            href="https://www.creative-tim.com?ref=nukr-dark-footer"
-            target="_blank"
+          // href="https://www.creative-tim.com?ref=nukr-dark-footer"
+          // target="_blank"
           >
-            Creative Tim
+            {/* Creative Tim */}
           </a>
           .
         </div>

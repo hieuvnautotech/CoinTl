@@ -5,8 +5,11 @@ import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Navhieu from "../../components/Navbars/NavHieu"
+import CardListHieu from "../../components/CardListHieu/index"
+import ModalHieu from "../../components/ModalHieu/index2";
 
 
+const defaultImageSrc = "../img/cryptocurrency.png";
 
 export default function EmployeeList() {
   const [employeeList, setEmployeeList] = useState([]);
@@ -85,7 +88,7 @@ export default function EmployeeList() {
         }
       }}
     >
-      <img src={data.imageSrc} className="card-img-top rounded-circle" />
+      <img src={defaultImageSrc} className="card-img-top rounded-circle" />
       <div className="card-body">
         <h5>{data.employeeName}</h5>
         <span>{data.occupation}</span> <br />
@@ -101,61 +104,17 @@ export default function EmployeeList() {
 
   return (
     <div className="row">
-      <Navhieu/>
-
-      <div className="col-md-3">
-        <Employee addOrEdit={addOrEdit} recordForEdit={recordForEdit} />
-      </div>
-      <div className="col-md-2">
-        
-      </div>
-      <div className="col-md-7">
-        <table>
-          <tbody>
-            {
-              //tr > 3 td
-              [...Array(Math.ceil(employeeList.length / 3))].map((e, i) => (
-                <tr key={i}>
-                  <td>{imageCard(employeeList[3 * i])}</td>
-                  <td>
-                    {employeeList[3 * i + 1]
-                      ? imageCard(employeeList[3 * i + 1])
-                      : null}
-                  </td>
-                  <td>
-                    {employeeList[3 * i + 2]
-                      ? imageCard(employeeList[3 * i + 2])
-                      : null}
-                  </td>
-                </tr>
-              ))
-            }
-          </tbody>
-        </table>
-      </div>
-      <Modal
+      <Navhieu />
+      {/* <Employee addOrEdit={addOrEdit} recordForEdit={recordForEdit} /> */}
+      <ModalHieu addOrEdit={addOrEdit} recordForEdit={recordForEdit} />
+      <CardListHieu
+        employeeList={employeeList}
+        imageCard={imageCard}
         open={open}
-        onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        <Box sx={style}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            <img src={recordForEdit?.imageSrc} className="card-img-top" />
-          </Typography>
-        </Box>
-      </Modal>
+        handleClose={handleClose}
+        recordForEdit={recordForEdit}
+      />
     </div>
   );
 }
-const style = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: 600,
-  bgcolor: "background.paper",
-  border: "2px solid #000",
-  boxShadow: 24,
-  p: 4,
-};
+

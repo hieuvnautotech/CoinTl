@@ -17,12 +17,11 @@ import {
   NavItem,
   NavLink,
   Nav,
-  Container
+  Container,
 } from "reactstrap";
 // core components
 
-
-function Navhieu(){
+function Navhieu() {
   return (
     <>
       <Navbar className="bg-info" expand="sm">
@@ -40,14 +39,24 @@ function Navhieu(){
           <UncontrolledCollapse navbar toggler="#navbarNavDropdown">
             <Nav navbar>
               <NavItem className="active">
-                <NavLink size="lg" className="txtHome" href="#pablo" onClick={e => e.preventDefault()}>
-                  Admin <span className="sr-only">(current)</span>
+                <NavLink
+                  size="lg"
+                  className="txtHome"
+                  href="http://localhost:3000/index"
+                  // onClick={(e) => e.preventDefault()}
+                >
+                  Home <span className="sr-only">(current)</span>
                 </NavLink>
               </NavItem>
-              <NavItem>
-                {/* <NavLink href="#pablo" onClick={e => e.preventDefault()}>
-                  Features
-                </NavLink> */}
+              <NavItem className="active">
+                <NavLink
+                  size="lg"
+                  className="txtHome"
+                  href="http://localhost:3000/admin3"
+                  // onClick={(e) => e.preventDefault()}
+                >
+                  Admin <span className="sr-only">(current)</span>
+                </NavLink>
               </NavItem>
               <NavItem>
                 {/* <NavLink href="#pablo" onClick={e => e.preventDefault()}>
@@ -70,19 +79,19 @@ function Navhieu(){
                 <DropdownMenu aria-labelledby="navbarDropdownMenuLink">
                   <DropdownItem
                     href="#pablo"
-                    onClick={e => e.preventDefault()}
+                    onClick={(e) => e.preventDefault()}
                   >
                     Action
                   </DropdownItem>
                   <DropdownItem
                     href="#pablo"
-                    onClick={e => e.preventDefault()}
+                    onClick={(e) => e.preventDefault()}
                   >
                     Another action
                   </DropdownItem>
                   <DropdownItem
                     href="#pablo"
-                    onClick={e => e.preventDefault()}
+                    onClick={(e) => e.preventDefault()}
                   >
                     Something else here
                   </DropdownItem>

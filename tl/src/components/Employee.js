@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import "../index";
 import TextField from "@mui/material/TextField";
 
-const defaultImageSrc = "../img/sample.png";
+const defaultImageSrc = "../img/cryptocurrency.png";
 
 const initialFieldValues = {
   employeeID: 0,

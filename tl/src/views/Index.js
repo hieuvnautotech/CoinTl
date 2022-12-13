@@ -1,4 +1,5 @@
 import React from "react";
+import { useState, useEffect } from "react";
 
 // reactstrap components
 // import {
@@ -24,41 +25,46 @@ import CompleteExamples from "./index-sections/CompleteExamples.js";
 import SignUp from "./index-sections/SignUp.js";
 import Examples from "./index-sections/Examples.js";
 import Download from "./index-sections/Download.js";
+import CardListHieu from "../components/CardListHieu/index";
+import AdminPage3 from "./examples/Admin3Page";
+import axios from "axios";
 
 
+const defaultImageSrc = "../img/cryptocurrency.png";
 
 function Index() {
-  React.useEffect(() => {
-    document.body.classList.add("index-page");
-    document.body.classList.add("sidebar-collapse");
-    document.documentElement.classList.remove("nav-open");
-    window.scrollTo(0, 0);
-    document.body.scrollTop = 0;
-    return function cleanup() {
-      document.body.classList.remove("index-page");
-      document.body.classList.remove("sidebar-collapse");
-    };
-  });
+  
+
+  
+
   return (
     <>
-      <IndexNavbar />
+      {/* <IndexNavbar /> */}
       <div className="wrapper">
         <IndexHeader />
         <div className="main">
-          <Images />
-          <BasicElements />
-          <Navbars />
-          <Tabs />
-          <Pagination />
-          <Notifications />
-          <Typography />
-          <Javascript />
-          <Carousel />
-          <NucleoIcons />
-          <CompleteExamples />
-          <SignUp />
-          <Examples />
-          <Download />
+          {/* <Images /> */}
+          {/* <BasicElements /> */}
+          {/* <Navbars /> */}
+          {/* <Tabs /> */}
+          {/* <Pagination /> */}
+          {/* <Notifications /> */}
+          {/* <Typography /> */}
+          {/* <Javascript /> */}
+          {/* <Carousel /> */}
+          {/* <NucleoIcons /> */}
+          {/* <CompleteExamples /> */}
+          {/* <SignUp /> */}
+          {/* <Examples /> */}
+          {/* <Download /> */}
+          {/* <CardListHieu
+            employeeList={employeeList}
+            imageCard={imageCard}
+            open={open}
+            handleClose={handleClose}
+            recordForEdit={recordForEdit}
+          /> */}
+          {/* <AdminPage3/> */}
         </div>
         <DarkFooter />
       </div>
